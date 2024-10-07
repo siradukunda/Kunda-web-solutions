@@ -1,0 +1,27 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the form data
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $project_type = htmlspecialchars($_POST['project_type']);
+    $date = htmlspecialchars($_POST['date']);
+
+    // Email content
+    $subject = "New Consultation Booking from " . $name;
+    $message = "You have received a new consultation booking.\n\n";
+    $message .= "Name: " . $name . "\n";
+    $message .= "Email: " . $email . "\n";
+    $message .= "Project Type: " . $project_type . "\n";
+    $message .= "Preferred Date: " . $date . "\n";
+    
+    // Send the email to yourself
+    $to = "simonpeteriradukunda9@gmail.com"; // Your email address
+    $headers = "From: " . $email;
+
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Thank you, " . $name . "! Your booking has been received.";
+    } else {
+        echo "Sorry, something went wrong. Please try again later.";
+    }
+}
+?>

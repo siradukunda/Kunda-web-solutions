@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Services - Kunda Web Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Fancy Navigation Bar */
+        .navbar {
+            background-color: #002a6f;
+            padding: 10px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: #0083ff;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover::after {
+            width: 100%;
+        }
+
+        .navbar ul li a:hover {
+            color: #0083ff;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .navbar.active ul {
+                display: flex;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #002a6f;
+                padding: 20px;
+                z-index: 999;
+            }
+
+            .mobile-menu-icon {
+                display: block;
+            }
+        }
+
+        /* Services Section */
+        .section-services {
+            padding: 80px 0;
+            background-color: #f0f4f8;
+        }
+
+        .section-services h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #004e92;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .section-services p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #555;
+        }
+
+        .service-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 10px;
+            width: 30%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .service-box p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #002a6f;
+            padding: 30px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer a {
+            color: #0083ff;
+            text-decoration: none;
+            transition: text-decoration 0.3s;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #cccccc;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section-services h2 {
+                font-size: 2.5em;
+            }
+
+            .section-services p {
+                font-size: 1.1em;
+            }
+
+            .service-box {
+                width: 100%;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .footer {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-services h2 {
+                font-size: 2em;
+            }
+
+            .section-services p {
+                font-size: 1em;
+            }
+
+            .service-box {
+                width: 100%;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+            }
+
+            .navbar ul li {
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="book.html">Book a Consultation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="our-services" class="section-services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-box" onclick="redirectToBook()">
+                    <h3>Business Websites</h3>
+                    <p>Custom, mobile-friendly websites designed to elevate your business. From SEO to fast loading speeds, we ensure your site stands out and attracts customers.</p>
+                </div>
+                <div class="service-box" onclick="redirectToBook()">
+                    <h3>Personal Projects</h3>
+                    <p>From portfolios to blogs, we create personal websites that reflect your brand and voice. Share your work or ideas with the world through an engaging platform.</p>
+                </div>
+                <div class="service-box" onclick="redirectToBook()">
+                    <h3>eCommerce Solutions</h3>
+                    <p>Optimized eCommerce platforms with integrated payment solutions, secure checkouts, and product management tools to help your online business thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Kunda Web Solutions. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            <div class="footer-bottom">
+                <p>Designed with passion for excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+
+        function redirectToBook() {
+            window.location.href = "book.html";
+        }
+    </script>
+
+</body>
+</html>

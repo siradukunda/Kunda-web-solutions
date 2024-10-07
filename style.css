@@ -1,0 +1,236 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    background-image: url('header-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.5em;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px 35px;
+    font-size: 1.4em;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff4f41;
+    transform: translateY(-5px);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #002a6f;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ff6f61;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Sections */
+.section-home, .section-about, .section-policy {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-home h2, .section-about h2, .section-policy h2 {
+    font-size: 3em;
+    color: #002a6f;
+    margin-bottom: 20px;
+}
+
+.section-home p, .section-about p, .section-policy p {
+    font-size: 1.3em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Footer */
+.footer {
+    background-color: #002a6f;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #cccccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .header p {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .navbar.active ul {
+        display: flex;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #002a6f;
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .footer {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 8px 0;
+    }
+
+    .footer {
+        font-size: 0.9em;
+    }
+}

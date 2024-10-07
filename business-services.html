@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Business Websites - Discover More | Kunda Web Solutions</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Fancy Navigation Bar */
+        .navbar {
+            background-color: #1b1f38;
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #0083ff;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 2em;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            .navbar.active ul {
+                display: flex;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #1b1f38;
+                padding: 20px;
+                z-index: 999;
+            }
+
+            .mobile-menu-icon {
+                display: block;
+            }
+        }
+
+        /* Business Websites Section */
+        .section-services {
+            padding: 100px 0;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .section-services h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #004e92;
+            font-weight: 700;
+        }
+
+        .section-services p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            color: #666;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: #333;
+            text-align: left;
+            padding: 20px;
+            background: #f0f4f8;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            background-color: #e0e7ee;
+        }
+
+        .feature-list li a {
+            text-decoration: none;
+            color: #004e92;
+            font-weight: 600;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .feature-list li a:hover {
+            color: #0083ff;
+        }
+
+        /* Call-to-Action Button */
+        .cta-button {
+            display: inline-block;
+            margin-top: 50px;
+            background-color: #0083ff;
+            padding: 15px 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3em;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 131, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: #006db3;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1b1f38;
+            padding: 30px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #0083ff;
+            text-decoration: none;
+            transition: text-decoration 0.3s;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #cccccc;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .section-services h2 {
+                font-size: 2.2em;
+            }
+
+            .section-services p {
+                font-size: 1.1em;
+            }
+
+            .cta-button {
+                font-size: 1.1em;
+                padding: 12px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-services h2 {
+                font-size: 2em;
+            }
+
+            .section-services p {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 25px;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+            }
+
+            .navbar ul li {
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="book.html">Book a Consultation</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Business Websites Section -->
+    <section id="business-websites" class="section-services">
+        <div class="container">
+            <h2>Business Websites: Discover More</h2>
+            <p>At Kunda Web Solutions, we specialize in creating stunning, responsive business websites that elevate your brand’s digital presence. From sleek design to functional layouts, our business websites are optimized for performance and conversions. Here's what sets us apart:</p>
+
+            <ul class="feature-list">
+                <li><a href="book.html"><strong>Responsive Design:</strong> Your website will look flawless on any device—desktop, tablet, or mobile.</a></li>
+                <li><a href="book.html"><strong>SEO Optimization:</strong> We build your website with SEO best practices to help you rank higher in search engines and drive organic traffic.</a></li>
+                <li><a href="book.html"><strong>Lead Generation:</strong> Conversion-focused designs that turn visitors into loyal customers, with integrated lead capture forms, clear call-to-actions, and smart user navigation.</a></li>
+                <li><a href="book.html"><strong>Custom Branding:</strong> We work with you to ensure your website reflects your brand identity—highlighting your unique value proposition to stand out in the market.</a></li>
+            </ul>
+
+            <p>Your business deserves more than just a website—it needs a powerful digital presence that drives results. Let’s build that together. Start today by booking a consultation with us, and discover how we can transform your business online.</p>
+            <a href="book.html" class="cta-button">Book a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Kunda Web Solutions. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            <div class="footer-bottom">
+                <p>Designed with passion for excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
